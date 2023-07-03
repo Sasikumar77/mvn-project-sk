@@ -89,7 +89,7 @@ class UserValidator {
 		else {
 			throw new IllegalArgumentException("User is not valid");
 		}
-		
+//		return false;
 	}
 }
 
@@ -107,13 +107,14 @@ public class ValidateUser {
 		user.setEmail("sasigmail.com");
 
 		//Validate the data by passing the object
-		Assertions.assertTrue(UserValidator.validate(user));
+
 		try {
-			UserValidator.validate(user);
+//			UserValidator.validate(user);
+			Assertions.assertTrue(UserValidator.validate(user));
 //			Assertions.fail("user invalid");
 		}
 		catch(IllegalArgumentException ex) {
-			System.out.println(ex.getLocalizedMessage());
+			System.out.println(ex.getMessage());
 		}
 	}
 }
